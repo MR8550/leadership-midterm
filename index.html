@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MED411 Leadership Quiz</title>
+<style>
+:root{--bg:#f6f4ef;--card:#fff;--tx:#1d2a2a;--mu:#6b7778;--ac:#0f766e;--ok:#15803d;--okb:#dcfce7;--no:#b91c1c;--nob:#fee2e2;--bd:#e3e0d8;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#101817;--card:#18221f;--tx:#e8f0ee;--mu:#93a5a2;--ac:#2dd4bf;--ok:#4ade80;--okb:#12351f;--no:#f87171;--nob:#3a1717;--bd:#2a3835}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.5 Georgia,'Times New Roman',serif}
+.w{max-width:680px;margin:0 auto;padding:16px}
+h1{font-size:1.4rem;margin:8px 0 2px}.sub{color:var(--mu);font-size:.9rem;margin-bottom:12px;font-family:system-ui,sans-serif}
+.chips{display:flex;gap:6px;overflow-x:auto;padding-bottom:8px;font-family:system-ui,sans-serif}
+.chip{flex:none;border:1px solid var(--bd);background:var(--card);color:var(--tx);padding:6px 12px;border-radius:99px;font-size:.8rem;cursor:pointer}
+.chip.on{background:var(--ac);color:var(--bg);border-color:var(--ac)}
+.bar{height:6px;background:var(--bd);border-radius:9px;margin:8px 0;overflow:hidden}.bar i{display:block;height:100%;background:var(--ac);width:0;transition:width .3s}
+.st{display:flex;justify-content:space-between;color:var(--mu);font:.85rem system-ui,sans-serif}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:18px;margin-top:10px}
+.q{font-size:1.1rem;margin:0 0 14px}
+.o{display:flex;user-select:text;-webkit-user-select:text;gap:10px;width:100%;text-align:left;background:var(--bg);color:var(--tx);border:1.5px solid var(--bd);border-radius:12px;padding:12px;margin-bottom:8px;font:inherit;font-size:.98rem;cursor:pointer}
+.o b{flex:none;width:24px;height:24px;border-radius:50%;background:var(--bd);display:grid;place-items:center;font:600 .75rem system-ui}
+.o.ok{background:var(--okb);border-color:var(--ok)}.o.no{background:var(--nob);border-color:var(--no)}
+.o.lk{cursor:default}.fb{font:600 .95rem system-ui,sans-serif;margin:6px 0 0;min-height:1.4em}
+.nav{display:flex;gap:8px;margin-top:12px}
+.btn{flex:1;padding:12px;border-radius:12px;border:1px solid var(--bd);background:var(--card);color:var(--tx);font:600 .95rem system-ui;cursor:pointer}
+.btn.p{background:var(--ac);color:var(--bg);border-color:var(--ac)}
+.big{font-size:3rem;text-align:center;margin:8px 0}.c{text-align:center}
+.tb{display:flex;justify-content:space-between;align-items:center}.ib{border:1px solid var(--bd);background:var(--card);border-radius:10px;font-size:1.05rem;padding:6px 9px;margin-left:4px;cursor:pointer}.ib.on{background:var(--ac)}
+:root[data-theme="dark"]{--bg:#101817;--card:#18221f;--tx:#e8f0ee;--mu:#93a5a2;--ac:#2dd4bf;--ok:#4ade80;--okb:#12351f;--no:#f87171;--nob:#3a1717;--bd:#2a3835}
+.fl{float:right;background:none;border:0;font-size:1.3rem;cursor:pointer;opacity:.4}.fl.on{opacity:1}.tag{color:var(--mu);font:.75rem system-ui}
+.rv{border-top:1px solid var(--bd);padding:10px 0;font-size:.95rem}.rv .y{color:var(--no);font:.85rem system-ui}.rv .g{color:var(--ok);font:600 .85rem system-ui}
+.st2{display:flex;gap:8px;margin:12px 0}.st2 div{flex:1;background:var(--bg);border-radius:12px;padding:8px;text-align:center;font:.75rem system-ui;color:var(--mu)}.st2 b{display:block;font-size:1.2rem;color:var(--tx)}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.row .btn{min-width:130px}
+.app{display:flex;min-height:100vh}.app .w{flex:1;min-width:0}
+#side{width:270px;flex:none;background:var(--card);border-right:1px solid var(--bd);padding:16px 12px;position:sticky;top:0;height:100vh;overflow-y:auto;font-family:system-ui,sans-serif}
+.mob{display:none}.sh{font:600 .7rem system-ui;letter-spacing:.08em;color:var(--mu);margin:14px 4px 6px;text-transform:uppercase}.sh:first-child{margin-top:0}
+.sn{position:relative;display:flex;justify-content:space-between;width:100%;padding:10px 12px;margin-bottom:4px;border:0;border-radius:10px;background:none;color:var(--tx);font:inherit;font-size:.9rem;cursor:pointer;overflow:hidden;text-align:left}
+.sn:hover{background:var(--bg)}.sn.on{background:var(--ac);color:var(--bg)}.sn small{opacity:.7}.sn i{position:absolute;left:0;bottom:0;height:3px;background:var(--ac)}.sn.on i{background:var(--bg)}
+#grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(34px,1fr));gap:5px}
+.gq{height:34px;border:1px solid var(--bd);border-radius:8px;background:var(--bg);color:var(--tx);font:.8rem system-ui;cursor:pointer}.gq.ok{background:var(--okb);border-color:var(--ok)}.gq.no{background:var(--nob);border-color:var(--no)}.gq.cur{outline:2px solid var(--ac)}
+.tools{display:flex;gap:6px;margin-top:14px}
+@media(max-width:820px){.app{display:block}#side{position:fixed;z-index:20;left:0;top:0;transform:translateX(-100%);transition:transform .25s;padding-top:calc(16px + env(safe-area-inset-top,0px));max-width:85vw}body.open #side{transform:none}body.open #bd{display:block;position:fixed;inset:0;background:#0006;z-index:15}.mob{display:inline-block}}
+
+:root{--bg:#dfe9f7;--tx:#14202e;--mu:#5d6c80;--ac:#0a84ff;--ok:#1f9d55;--okb:rgba(52,199,89,.24);--no:#d63a3a;--nob:rgba(255,69,58,.2);--bd:rgba(255,255,255,.7);--card:rgba(255,255,255,.5);--g2:rgba(255,255,255,.45);--b1:rgba(10,132,255,.45);--b2:rgba(191,90,242,.33);--b3:rgba(48,209,200,.4);--b4:rgba(255,159,10,.3);--sh:rgba(40,60,120,.18)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1020;--tx:#eef3ff;--mu:#9aa8c4;--ac:#3b9bff;--ok:#5fe08a;--okb:rgba(52,199,89,.22);--no:#ff7b72;--nob:rgba(255,69,58,.22);--bd:rgba(255,255,255,.14);--card:rgba(40,50,85,.42);--g2:rgba(255,255,255,.07);--b1:rgba(10,132,255,.4);--b2:rgba(191,90,242,.35);--b3:rgba(48,209,200,.22);--b4:rgba(94,92,230,.35);--sh:rgba(0,0,0,.4)}}
+:root[data-theme="dark"]{--bg:#0b1020;--tx:#eef3ff;--mu:#9aa8c4;--ac:#3b9bff;--ok:#5fe08a;--okb:rgba(52,199,89,.22);--no:#ff7b72;--nob:rgba(255,69,58,.22);--bd:rgba(255,255,255,.14);--card:rgba(40,50,85,.42);--g2:rgba(255,255,255,.07);--b1:rgba(10,132,255,.4);--b2:rgba(191,90,242,.35);--b3:rgba(48,209,200,.22);--b4:rgba(94,92,230,.35);--sh:rgba(0,0,0,.4)}
+body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',system-ui,sans-serif;background:var(--bg)}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(40% 35% at 15% 10%,var(--b1),transparent 70%),radial-gradient(35% 35% at 85% 20%,var(--b2),transparent 70%),radial-gradient(45% 40% at 70% 90%,var(--b3),transparent 70%),radial-gradient(35% 30% at 10% 85%,var(--b4),transparent 70%)}
+.card,#side,.st2 div,.ib,.btn{background:var(--card);-webkit-backdrop-filter:blur(26px) saturate(180%);backdrop-filter:blur(26px) saturate(180%);border:1px solid var(--bd);box-shadow:0 10px 30px var(--sh),inset 0 1px 0 rgba(255,255,255,.55)}
+.card{border-radius:30px;padding:22px}.q{font-weight:600;font-size:1.12rem}
+.o{border-radius:22px;background:var(--g2);border:1px solid var(--bd);box-shadow:0 2px 8px var(--sh),inset 0 1px 0 rgba(255,255,255,.5);transition:transform .15s,background .2s;align-items:center}
+.o:not(.lk):hover{transform:scale(1.015)}.o:not(.lk):active{transform:scale(.985)}
+.o b{background:linear-gradient(145deg,rgba(255,255,255,.85),rgba(255,255,255,.15));color:var(--tx);box-shadow:inset 0 1px 1px rgba(255,255,255,.8),0 1px 4px var(--sh);width:28px;height:28px}
+.o.ok{border-color:var(--ok)}.o.no{border-color:var(--no)}.o.ok b{background:var(--ok);color:#fff}.o.no b{background:var(--no);color:#fff}
+.btn{border-radius:22px;padding:13px}.btn.p,.sn.on{color:#fff;background:linear-gradient(180deg,rgba(255,255,255,.4),rgba(255,255,255,0) 55%),var(--ac);border-color:rgba(255,255,255,.4)}
+.sn.on{box-shadow:0 6px 16px var(--sh),inset 0 1px 0 rgba(255,255,255,.5)}.sn{border-radius:18px}.ib{border-radius:50%;width:38px;height:38px;padding:0;display:grid;place-items:center}.ib.on{background:var(--ac)}
+.bar{height:9px;background:var(--g2);border:1px solid var(--bd)}.bar i{background:linear-gradient(90deg,var(--ac),#64d2ff);border-radius:9px}
+.st2 div{border-radius:22px}.gq{border-radius:50%;width:100%;aspect-ratio:1;height:auto;background:var(--g2);backdrop-filter:blur(10px)}
+#side{margin:12px;top:12px;height:calc(100vh - 24px);border-radius:30px}
+@media(max-width:820px){#side{margin:0;top:0;height:100dvh;border-radius:0 30px 30px 0}.card{padding:18px}}
+</style></head><body><div class="app"><aside id="side"><div class="sh">Sections</div><div id="nav2"></div><div class="sh">Questions</div><div id="grid"></div><div class="tools"><button class="ib" id="th" title="Theme">🌙</button><button class="ib" id="shf" title="Shuffle">🔀</button><button class="ib" id="rst" title="Reset all">🗑️</button></div></aside><div id="bd"></div><div class="w">
+<div class="tb"><h1>🩺 Leadership · MED411</h1><button class="ib mob" id="mn">☰</button></div><div class="sub">Tap to answer · select text freely · keys A–E, ←/→, F to flag</div>
+<div class="bar"><i id="pb"></i></div><div class="st"><span id="pos"></span><span id="sc"></span></div>
+<div class="card" id="card"></div>
+<div class="nav" id="nav"><button class="btn" id="prev">←</button><button class="btn p" id="next">Next →</button></div>
+</div></div>
+<script>
+const D={
+"Midterm (40)":[
+"What is the primary role of leaders?~Creating new paradigms and leading change~Controlling staff activities~Solving problems within an existing framework~Providing order and consistency~Monitoring performance and setting detailed rules~A",
+"Junior staff idea; senior staff resist change. Your approach?~Dismiss the idea to avoid conflict~Let seniors veto without discussion~Implement without consulting seniors~Ask junior to work on it alone~Encourage team discussion to find common ground~E",
+"Project succeeded but a member feels unacknowledged. You:~Ignore the complaint~Hold a team meeting acknowledging all contributions~Recognize only top performers~Acknowledge privately, take no action~Praise whole team publicly, skip individuals~B",
+"Resistance slows a new strategy. Most critical trait?~Grit~Charisma~Expertise in systems~Initiative~Credibility~A",
+"Small-team leader wants credibility. Best approach?~Become an expert in a specific initiative~Show charisma and confidence in meetings~Build relationships with executives~Delegate effectively~Avoid conflicts~A",
+"Style that prioritizes serving team and patients over power?~Autocratic~Bureaucratic~Servant~Charismatic~Laissez-faire~C",
+"Drawback of autocratic style in medicine?~Too much team engagement~Slow decision-making~Lack of motivation and creativity~Excessive flexibility~Over-dependence on team input~C",
+"Management style that develops and empowers professionals?~Autocratic~Bureaucratic~Coaching~Transactional~Laissez-faire~C",
+"Disadvantage of democratic style?~Quick decision-making~Clear authority and direction~Limited team engagement~Potential conflicts with diverse opinions~Lack of motivation and creativity~D",
+"Dr. Lamia wants creativity in her research team. Style?~Autocratic~Bureaucratic~Charismatic~Laissez-faire~Transactional~D",
+"Dr. Amany communicates a vaccination campaign vision. Style?~Autocratic~Bureaucratic~Democratic~Charismatic~Laissez-faire~D",
+"Who typically makes tactical decisions?~Frontline nurses~Hospital board members~Department managers and mid-level supervisors~Government regulators~External consultants~C",
+"Reviewing whether staff cuts affected patient care is which decision stage?~Implementation~Feedback and evaluation~Information gathering~Decision-making~Developing alternatives~B",
+"Identify problem, explore alternatives, choose, implement, evaluate = which model?~OODA Loop~Six Thinking Hats~Intuitive~DECIDE~Bounded Rationality~D",
+"Six Thinking Hats: which hat addresses risks and drawbacks?~White~Black~Red~Green~Yellow~B",
+"Leader gives members specific tasks in care planning. Strategy?~Facilitate consensus-building~Assign roles~Establish clear goals~Encourage open communication~Utilize structured techniques~B",
+"Why is stakeholder engagement crucial in healthcare?~Increase profits~Reduce staff workload~Support projects and shape service delivery~Simplify administration~Reduce legal liability~C",
+"Relationship between EI and leadership influence?~EI is irrelevant~High EI guarantees influence~EI enhances ability to understand and connect, facilitating influence~EI only matters for subordinates~EI means always putting feelings over goals~C",
+"What characterizes successful crisis leadership?~Following predetermined plans~Maintaining regular operations only~Adapting influence strategies rapidly~Implementing standard protocols~Preserving existing structures~C",
+"Addressing resistance to evidence-based change?~Mandate immediate compliance~Maintain current practice~Build consensus through engagement~Periodic reviews only~Follow external directives~C",
+"Senior surgeons show low hand-hygiene compliance. Most influential approach?~Post rates naming surgeons~Respected peer surgeons demonstrate and advocate~Strict disciplinary system~Ignore seniors, focus on juniors~Remove sanitizer stations~B",
+"Improve patient satisfaction scores. Most influential approach?~Post physician scores in lounge~Bonus tied to scores~Empathetic communication training for all patient-facing staff~Extend appointments by 50%~Hire consultants to handle complaints~C",
+"Leader exhausted and irritable after a long week. Productive response?~Short break and stress-relief techniques~Work through the weekend~Complain to the team~Ignore feelings and push~Blame the team~A",
+"Head regularly seeks team feedback on his leadership. EI trait?~Self-awareness~Communication~Teamwork~Influence~Organizational awareness~A",
+"Leader resolves conflicts via open dialogue, hearing all views. EI component?~Communication~Conflict management~Influence~Self-awareness~Organizational awareness~B",
+"Leader encourages quiet members to share ideas. EI aspect?~Social management~Initiative~Empathy~Self-control~Communication~A",
+"Leader scans cultural/emotional climate and power dynamics. EI trait?~Organizational awareness~Communication~Leadership~Self-awareness~Empathy~A",
+"Manager prioritizes tasks and stays calm under pressure. EI skill?~Self-management~Leadership~Conflict management~Social skills~Initiative~A",
+"Leader inspires with a compelling vision and enthusiasm. EI trait?~Influence~Motivation~Empathy~Initiative~Emotional awareness~B",
+"Primary role of a strategic leader?~Managing day-to-day operations~Defining organizational policies and vision~Planning and executing team activities~Handling paperwork~Developing only individuals~B",
+"Function emphasizing assigning tasks and setting standards?~Planning~Controlling~Initiating~Informing~Evaluating~C",
+"Why monitor team dynamics in action-centered leadership?~Identify underperformers for dismissal~Make tasks interchangeable~Prevent conflicts and maintain group cohesion~Reduce external competition~Automate workflow~C",
+"Responsibility involving setting KPIs?~Administrative tasks~Goal setting~Training and development~Team-building exercises~Crisis management~B",
+"Leadership level focusing on planning and monitoring results?~Operational leadership~Executive leadership~Team leadership~Informal leadership~Administrative leadership~A",
+"Effective way to promote individual growth?~Difficult tasks without guidance~Continuous training and feedback~Avoiding supervision~Only team-building~Constant rotation~B",
+"Element critical when multiple responsibilities overlap?~Delegation~Informing~Avoiding change~Risk-taking~Team disengagement~A",
+"Dr. Sally: inspiring vision, motivates, bigger picture. Style?~Transactional~Laissez-faire~Transformational~Authoritarian~Democratic~C",
+"Dr. Hania: empathy, manages emotions, communication in crises. Shows EI as:~Focusing on technical skills~Managing tasks with strict authority~Developing relationships and managing emotions~Delegating without concern for emotions~Prioritizing finances over well-being~C",
+"Dr. Eman: followership is as essential as leadership. Its role?~Limits leadership success~Irrelevant~Helps co-create and shape leadership~Contradicts good leadership~Weakens leadership~C",
+"CEO decides by instinct and experience. Model?~DECIDE~Six Thinking Hats~Intuitive Decision-Making~Rational~OODA Loop~C"],
+"Forum 1":[
+"Characteristic of leadership?~Planning and budgeting~Problem-solving~Controlling and monitoring~Creating a vision for the future~Organizing and staffing~D",
+"'Followership' refers to:~Controlling subordinates~The influence followers have on leaders~Obeying without question~Challenging authority~Following the leader's rules~B",
+"Theory that leaders are born, not made?~Situational~Charismatic~Transformational~Transactional~Adaptive~B",
+"Management is primarily concerned with:~Long-term strategic vision~Encouraging dynamic change~Organizing and staffing~Motivating people~Disrupting systems~C",
+"New member confused about goals. Best approach?~Assign tasks immediately~One-on-one meeting to communicate goals and support~Let them observe~Have another member mentor~Trial and error~B",
+"Budget cuts: which quality helps a well-informed decision?~Grit~Humility~Understanding the socio-political context~Emotional intelligence~Delegation skills~C"],
+"Forum 2":[
+"Leader decides on own ideas with little input?~Democratic~Bureaucratic~Autocratic~Charismatic~Laissez-faire~C",
+"Idealized influence, inspirational motivation, intellectual stimulation, individualized consideration:~Transactional~Servant~Situational~Transformational~Charismatic~D",
+"Best style for multidisciplinary team meetings?~Autocratic~Bureaucratic~Democratic~Charismatic~Laissez-faire~C",
+"Best style for strict infection control procedures?~Autocratic~Bureaucratic~Democratic~Charismatic~Laissez-faire~B",
+"Research leader encourages creativity, supports only when needed:~Autocratic~Bureaucratic~Democratic~Charismatic~Laissez-faire~E",
+"Nurse manager gives feedback and personalized development plans:~Autocratic~Bureaucratic~Coaching~Transactional~Laissez-faire~C"],
+"Forum 3":[
+"Rational model: first step?~Implementing the decision~Identifying the problem~Generating alternatives~Collecting feedback~Evaluating alternatives~B",
+"Best example of tactical decision-making?~Hospital-wide safety protocol~Scheduling daily tasks of personnel~Reallocating resources for seasonal patient influx~Choosing mission and vision~Deciding on new specialties~C",
+"Model accepting limited information and time constraints?~Rational~Incremental~Bounded rationality~Political~Garbage can~C",
+"Characteristic of rational decision-making?~Gut feelings~Trial and error~All options considered before deciding~Delegated to juniors~Reactive, no analysis~C",
+"Upgrading medical software: the tactical decision?~How to implement without disrupting operations~Identifying vendors~Training staff~Reviewing long-term financial impact~Whether it meets overall goals~A",
+"Nurse handles emergency by instinct and experience. Model?~Rational~Bounded Rationality~Intuitive~Six Thinking Hats~DECIDE~C",
+"Considering facts, emotions, logic, creativity before deciding:~OODA Loop~Six Thinking Hats~DECIDE~Pros and Cons~Intuitive~B",
+"OODA Loop in a disaster: risk if 'Orient' fails?~Incomplete action plan~Critical information missed, poor decisions~Observation too slow~Unable to choose between options~Delayed implementation~B",
+"Leader creates a safe, open space for concerns and ideas:~Establish clear goals~Assign roles~Facilitate consensus-building~Encourage open communication~Utilize structured techniques~D",
+"Final decision includes input from every member:~Establish clear goals~Encourage open communication~Facilitate consensus-building~Utilize structured techniques~Assign roles~C"],
+"Forum 4":[
+"What is Emotional Intelligence?~Suppressing emotions~Ability to understand and control emotions of self and others~Knowledge of others' emotions~Skill to manipulate others~Understanding one's own emotions~B",
+"Component related to self-regulation?~Empathy~Self-confidence~Initiative~Motivation~Active listening~C",
+"High-EI leaders build positive culture by:~Ignoring team dynamics~Delegating all decisions~Modeling empathy and respect~Enforcing strict rules~Avoiding personal interactions~C",
+"Employee becomes defensive and raises his voice. Manager should:~Raise voice back~End meeting abruptly~Ignore it~Calmly acknowledge feelings and discuss privately~Ask another member to handle it~D",
+"Two members constantly disagree. Leader should:~Take sides~Ignore it~Facilitate discussion to find common ground~Separate them~Ask another manager~C",
+"Best action to improve empathy?~Observe team members' body language~Focus only on deadlines~Avoid talking outside work~Delegate interactions to HR~Take a vacation~A"],
+"Forum 5":[
+"Characterizes ethical influence?~Respecting autonomy and evidence~Achieving goals by any means~Deciding in isolation~Focusing solely on outcomes~Limiting staff participation~A",
+"Essential combination of leadership tasks?~Planning, organizing, staffing~Documentation, authority, control~Supervision, evaluation, feedback~Direction, alignment, commitment~Communication, coordination, compliance~D",
+"Best approach to cross-boundary effectiveness?~Avoid external partnerships~Strict protocols~Centralize decisions~Rigid departmental boundaries~Build influence networks and trust-based relationships~E",
+"Staff resist new tablet feedback system. Best influence?~Reduce salaries~Add to performance evaluations~Only volunteer departments~Comprehensive training and ongoing support~IT follows staff around~D",
+"ED resists new triage system. Most effective technique?~Visit a nearby hospital that implemented it successfully~Mandate using CMO authority~Financial incentives~Threaten funding cuts~Implement without consulting~A",
+"Influence department heads to cut costs 10% without harming care:~Bonuses for biggest cutters~Across-the-board 10% cuts~Hire external consultants~Threaten closures~Cost-saving task force with representatives from each department~E"]};
+const L="ABCDE",keys=Object.keys(D),Q=[];
+const P=s=>{const a=s.split("~");return{q:a[0],o:a.slice(1,6),a:L.indexOf(a[6])}};
+keys.forEach(k=>D[k].forEach((s,n)=>{const p=P(s);p.id=k+n;p.k=k;p.n=n+1;Q.push(p)}));
+const $=id=>document.getElementById(id);
+let cur=keys[0],set=[],i=0,st={},fl={},sh=0,res=false,t0=Date.now(),sk=0,bk=0;
+try{st=JSON.parse(localStorage.getItem("q_st")||"{}");fl=JSON.parse(localStorage.getItem("q_fl")||"{}")}catch(e){}
+const sv=()=>{try{localStorage.setItem("q_st",JSON.stringify(st));localStorage.setItem("q_fl",JSON.stringify(fl))}catch(e){}};
+const wr=()=>Q.filter(q=>st[q.id]!=null&&st[q.id]!=q.a);
+function build(){set=(cur=="All"?Q:cur=="Wrong"?wr():cur=="Flagged"?Q.filter(q=>fl[q.id]):Q.filter(q=>q.k==cur)).slice();
+if(sh)set.sort(()=>Math.random()-.5);i=0;res=false;sk=0;bk=0;t0=Date.now()}
+function go(k){cur=k;build();if(k=="Wrong")set.forEach(q=>delete st[q.id]);show()}
+function chips(){const tabs=[...keys,"All","Wrong","Flagged"];
+$("nav2").innerHTML=tabs.map(k=>{const sp=k=="Wrong"||k=="Flagged",qs=k=="All"?Q:k=="Wrong"?wr():k=="Flagged"?Q.filter(q=>fl[q.id]):Q.filter(q=>q.k==k);
+const d=qs.filter(q=>st[q.id]!=null).length,ic=k=="Wrong"?"❌":k=="Flagged"?"⭐":k=="All"?"📚":"📖";
+return`<button class="sn ${k==cur?'on':''}" data-k="${k}"><span>${ic} ${k}</span><small>${sp?qs.length:d+"/"+qs.length}</small>${sp?"":`<i style="width:${d/qs.length*100}%"></i>`}</button>`}).join("");
+$("grid").innerHTML=set.map((q,j)=>`<button class="gq ${j==i&&!res?'cur':''} ${st[q.id]==null?'':st[q.id]==q.a?'ok':'no'}" data-i="${j}">${j+1}</button>`).join("");
+document.querySelectorAll(".sn").forEach(b=>b.onclick=()=>{cl();go(b.dataset.k)});
+document.querySelectorAll(".gq").forEach(b=>b.onclick=()=>{cl();i=+b.dataset.i;res=false;show()})}
+const cl=()=>document.body.classList.remove("open");
+$("mn").onclick=()=>document.body.classList.toggle("open");$("bd").onclick=cl;
+function pick(j){const q=set[i];if(res||st[q.id]!=null)return;st[q.id]=j;if(j==q.a){sk++;bk=Math.max(bk,sk)}else sk=0;sv();show()}
+function stats(){const d=set.filter(q=>st[q.id]!=null).length,r=set.filter(q=>st[q.id]==q.a).length;return{d,r,n:set.length}}
+function tm(){const s=Math.floor((Date.now()-t0)/1000);return Math.floor(s/60)+":"+String(s%60).padStart(2,"0")}
+function show(){chips();const nav=$("nav");
+if(!set.length){$("card").innerHTML='<div class="c"><div class="big">🎉</div>Nothing here yet.</div>';nav.style.display="none";$("pos").textContent="";$("sc").textContent="";$("pb").style.width=0;return}
+const {d,r,n}=stats();$("pb").style.width=d/n*100+"%";$("sc").innerHTML=`✔ ${r}/${d} · 🔥 ${sk}`;
+if(res){nav.style.display="none";$("pos").textContent="Results";return results(r,n)}
+nav.style.display="flex";const q=set[i],s=st[q.id];$("pos").textContent=`Question ${i+1}/${n}`;
+$("card").innerHTML=`<button class="fl ${fl[q.id]?'on':''}" id="fl" title="Flag">⭐</button><div class="tag">${q.k} · #${q.n}</div><p class="q">${q.q}</p>`+
+q.o.map((t,j)=>{let c="";if(s!=null){c="lk "+(j==q.a?"ok":j==s?"no":"")}
+return`<div class="o ${c}" data-j="${j}"><b>${L[j]}</b><span>${t}</span></div>`}).join("")+
+`<div class="fb">${s==null?"":s==q.a?(sk>=3?"✅ Correct! 🔥 "+sk+" in a row":"✅ Correct!"):"❌ Wrong — correct answer is "+L[q.a]}</div>`;
+document.querySelectorAll(".o").forEach(b=>b.onclick=()=>{if(String(getSelection()).length)return;pick(+b.dataset.j)});
+$("fl").onclick=()=>{fl[q.id]=!fl[q.id];sv();show()};
+$("next").textContent=i==n-1?"Finish ✓":"Next →";$("prev").style.visibility=i?"visible":"hidden"}
+function results(r,n){const w=set.filter(q=>st[q.id]!=null&&st[q.id]!=q.a),p=Math.round(r/n*100);
+const m=p>=90?"🏆 Outstanding!":p>=75?"🎉 Great job!":p>=50?"👍 Getting there":"📚 Keep studying";
+const ki=keys.indexOf(cur);
+$("card").innerHTML=`<div class="c"><div class="big">${m.split(" ")[0]}</div><h2 style="margin:0">${p}%</h2><div>${m.slice(3)}</div></div>
+<div class="st2"><div><b>${r}/${n}</b>correct</div><div><b>${w.length}</b>wrong</div><div><b>${bk}</b>best streak</div></div>
+<div class="row">${w.length?'<button class="btn p" id="rw">🔁 Retry wrong only</button>':''}<button class="btn" id="rs">↺ Restart</button>${ki>=0&&ki<keys.length-1?'<button class="btn" id="ns">Next section →</button>':''}</div>
+${w.length?'<h3>Review your mistakes</h3>'+w.map(q=>`<div class="rv"><b>${q.q}</b><div class="y">✗ You: ${L[st[q.id]]}. ${q.o[st[q.id]]}</div><div class="g">✓ ${L[q.a]}. ${q.o[q.a]}</div></div>`).join(""):'<p class="c">Perfect — nothing to review! 🌟</p>'}`;
+if($("rw"))$("rw").onclick=()=>{set=w;set.forEach(q=>delete st[q.id]);sv();i=0;res=false;sk=0;bk=0;t0=Date.now();show()};
+$("rs").onclick=()=>{set.forEach(q=>delete st[q.id]);sv();build();show()};
+if($("ns"))$("ns").onclick=()=>go(keys[ki+1])}
+function nxt(){if(res)return;if(i<set.length-1)i++;else{const u=set.findIndex(q=>st[q.id]==null);if(u>=0)i=u;else res=true}show()}
+function prv(){if(i>0&&!res){i--;show()}}
+$("next").onclick=nxt;$("prev").onclick=prv;
+document.addEventListener("keydown",e=>{const k=e.key.toUpperCase();if("ABCDE".includes(k)&&k.length==1)pick(L.indexOf(k));else if("12345".includes(k)&&k.length==1)pick(+k-1);
+else if(e.key=="ArrowRight"||e.key=="Enter")nxt();else if(e.key=="ArrowLeft")prv();else if(k=="F"&&set[i]&&!res){fl[set[i].id]=!fl[set[i].id];sv();show()}});
+function theme(t){document.documentElement.dataset.theme=t;$("th").textContent=t=="dark"?"☀️":"🌙";try{localStorage.setItem("q_th",t)}catch(e){}}
+let t0th=null;try{t0th=localStorage.getItem("q_th")}catch(e){}
+theme(t0th||(matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light"));
+$("th").onclick=()=>theme(document.documentElement.dataset.theme=="dark"?"light":"dark");
+$("shf").onclick=()=>{sh=!sh;$("shf").classList.toggle("on",sh);build();show()};
+$("rst").onclick=()=>{if(confirm("Reset all answers and flags?")){st={};fl={};sv();build();show()}};
+build();show();
+</script></body></html>
